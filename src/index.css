@@ -11,7 +11,10 @@ body {
 h3{
   padding-bottom: 1em !important;
 }
-
+.sombra{
+  box-shadow: 5px 5px 3px #282829,
+  -5px -3px 3px #282829;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -19,13 +22,12 @@ code {
 .Contenerdor{
   width: 100%;
   height: 1200px;
-  background: rgb(2,0,36);
-  background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(34,133,205,1) 0%, rgba(28,230,232,1) 100%, rgba(9,9,121,1) 3822%);
+  background-image: radial-gradient(circle at 50% -20.71%, #ecffff 0, #d3ffff 25%, #b5f2f2 50%, #96e0e3 75%, #7bd0d7 100%);
+
 }
 .cabecera{
-  text-align: center;
-  height: 2em;
+ 
+  height: 5em;
   margin: 0 auto;
   margin-bottom: 20px;
   width: 50%;
@@ -33,9 +35,21 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(34,133,205,1) 0%, rgb
 
 }
 
+
+
+
 .titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 100%;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  height: 3em;
   background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(147,66,187,1) 0%, rgba(28,121,232,1) 100%, rgba(9,9,121,1) 3822%);  border-radius: 1em 1em 1em 1em;
+ 
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(74, 66, 187) 0%, rgba(28,121,232,1) 100%, rgba(9,9,121,1) 3822%);  border-radius: 1em 1em 1em 1em;
 }
 
 .productos{
@@ -50,8 +64,7 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(34,133,205,1) 0%, rgb
 }
 .producto{
   margin-top: 20px;
-  background-image: radial-gradient(circle at 67.85% 50%, #a541f0 0, #963ef1 25%, #853cf2 50%, #723af3 75%, #5b3af4 100%);
-  border-radius: 2em 2em  2em 2em ;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(74, 66, 187) 0%, rgba(28,121,232,1) 100%, rgba(9,9,121,1) 3822%);  border-radius: 1em 1em 1em 1em;  border-radius: 2em 2em  2em 2em ;
   border-style:groove
 }
 
