@@ -1,4 +1,4 @@
-import React,{Fragment,useContext} from 'react';
+import React,{Fragment,useContext,useState} from 'react';
 import MedicoContext from '../../context/medico/medicoContext';
 import ClienteContext from '../../context/cliente/clienteContext';
 import toast, { Toaster } from 'react-hot-toast';
@@ -12,16 +12,22 @@ const VerHorario = ({}) => {
       const {agregarHora} = clienteContext;
     
 
-      //Notificaciones
-      const notify = () => toast('Here is your toast.');
+      const [activo,guardarActivo]= useState(true)
+
+     
 
       
     const obtenerHora =hora=>{
+      guardarActivo(false)
       verHorarioMedico(hora.idMedico)
       agregarHora(hora)
       eliminarHora(hora.id)
       toast.success(`su hora para ${hora.especialidad} ha sido asiganada para el ${hora.Fecha}`)
-      
+      setTimeout(() => {
+        guardarActivo(true)
+      }, 2000);
+     
+   
     }
     return ( 
         <Fragment>
@@ -35,9 +41,14 @@ const VerHorario = ({}) => {
                 <div class="box sombra">
                   <p><span>Fecha:</span> {hora.Fecha} </p>
                  
-                  <button class="button is-primary is-small is-rounded"
+                  {activo? ( <button class="button is-primary is-small is-rounded"
                     onClick={()=>obtenerHora(hora)}
+                  >Pedir Hora</button>):
+                   <button class="button is-primary is-small is-rounded"disabled
+                
                   >Pedir Hora</button>
+                  }
+                 
                   <Toaster/>
                 </div>
               </li>

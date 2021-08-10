@@ -1,15 +1,17 @@
-import React,{useState} from 'react';
+import React,{useState,useContext} from 'react';
 
 import VerHorario from './VerHorarios';
 import VerMedicos from './VerMedicos';
 import VerAgenda from './VerAgenda';
-import medicoContext from '../../context/medico/medicoContext';
+import MedicoContext from '../../context/medico/medicoContext';
 
 
 
 const VistaCliente =() => {
 
-
+  //Obtener state de medico
+  const medicoContext = useContext(MedicoContext)
+  const {horariomedi} = medicoContext;
 
  
 //  const verhorario =(id) =>{
@@ -29,8 +31,9 @@ const VistaCliente =() => {
         <VerMedicos
         >
         </VerMedicos>
-        <VerHorario
-        ></VerHorario>
+        {horariomedi.length === 0?(null):<VerHorario
+        ></VerHorario>}
+        
       <VerAgenda>
           
       </VerAgenda>

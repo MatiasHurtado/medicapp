@@ -61,9 +61,10 @@ span{
 .productos{
   display: grid;
   
-  grid-template-areas:' medicos horario' 
+  grid-template-areas:' medicos medicos' 
+                      ' horario horario'
                       'agenda agenda';
-  grid-template-columns: 45% 45% ;
+  grid-template-columns: 40% ;
   width:90%;
   margin: 0 auto;
   height: auto;
@@ -74,10 +75,14 @@ span{
 }
 .med{ 
   grid-area:medicos;
-  width: 100%;
+  margin: 0 auto;
+
+  width: 60%;
 }
 .hor{grid-area:horario;
-  width: 100%;
+  margin: 0 auto;
+
+  width: 60%;
 }
 .agen{grid-area:agenda;
   margin: 0 auto;
