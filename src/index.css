@@ -12,33 +12,38 @@ h3{
   padding-bottom: 1em !important;
 }
 .sombra{
-  box-shadow: 5px 5px 3px #282829,
-  -5px -3px 3px #282829;
+  box-shadow: 0 0.1rem 0.15rem rgba(40,36,89,0.15),0 0.25rem 0.5rem rgba(40,36,89,0.15),0 0.75rem 1.75rem rgba(40,36,89,0.2);
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+span{
+  color: blue;
+  font-weight: bold;
+}
+
 .Contenerdor{
   width: 100%;
-  height: 1200px;
-  background-image: radial-gradient(circle at 50% -20.71%, #ecffff 0, #d3ffff 25%, #b5f2f2 50%, #96e0e3 75%, #7bd0d7 100%);
-
+  height: 2000px;
+  background-image: linear-gradient(180deg, #505467 0, #1f3259 50%, #00154b 100%);
 }
 .cabecera{
  
   height: 5em;
   margin: 0 auto;
   margin-bottom: 20px;
-  width: 50%;
+  width: 100%;
   border-radius: 5px 5px 5px 5px;
 
 }
 
 
 
-
 .titulo{
+  background-image: linear-gradient(345deg, #00ffff 0, #21e0ff 25%, #3cb5f2 50%, #408cbb 75%, #3b6788 100%);
+  font-size: 1.5rem;
+  font-weight: 900;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,32 +51,49 @@ code {
   width: 100%;
   color: rgb(255, 255, 255);
   text-align: center;
-  height: 3em;
-  background: rgb(2,0,36);
+  height: 4em;
+  letter-spacing: 0.1em;
+  border-end-end-radius: 40%;
+  border-end-start-radius: 40%;
  
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(74, 66, 187) 0%, rgba(28,121,232,1) 100%, rgba(9,9,121,1) 3822%);  border-radius: 1em 1em 1em 1em;
 }
 
 .productos{
-  grid-template-columns: 45% 45%;
-  justify-content: space-around;
   display: grid;
+  
+  grid-template-areas:' medicos horario' 
+                      'agenda agenda';
+  grid-template-columns: 45% 45% ;
   width:90%;
   margin: 0 auto;
   height: auto;
+  
   color: aliceblue;
   padding-bottom:20px;
+  justify-content: space-around;
+}
+.med{ 
+  grid-area:medicos;
+  width: 100%;
+}
+.hor{grid-area:horario;
+  width: 100%;
+}
+.agen{grid-area:agenda;
+  margin: 0 auto;
+  width: 60%;
 }
 .producto{
   margin-top: 20px;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgb(74, 66, 187) 0%, rgba(28,121,232,1) 100%, rgba(9,9,121,1) 3822%);  border-radius: 1em 1em 1em 1em;  border-radius: 2em 2em  2em 2em ;
-  border-style:groove
+  background-image: linear-gradient(345deg, #00ffff 0, #21e0ff 25%, #3cb5f2 50%, #408cbb 75%, #3b6788 100%);  
+  border-radius: 6%;
 }
-
+.listados{
+  margin-bottom: 3em;
+}
 
 .box{
   background-image: radial-gradient(circle at 67.85% 50%, #eae6ee 0, #dfd8e9 50%, #d3cbe4 100%);
-
   margin: 0 auto;
   width: 80%;
   height: auto;
@@ -80,6 +102,11 @@ code {
   display: flex !important;
   flex-direction: row;
   margin-bottom: 1rem;
+}
+.producto h3{
+  
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 
