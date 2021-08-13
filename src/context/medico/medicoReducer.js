@@ -1,5 +1,5 @@
 import {
-    Obtener_Horarios,ELIMINAR_HORA,REINICIAR_HORARIOS} from '../../types/index'
+    Obtener_Horarios,ELIMINAR_HORA,REINICIAR_HORARIOS,OBTENER_MEDICOS} from '../../types/index'
 
 export default(state,action) =>{
     switch(action.type){
@@ -18,6 +18,15 @@ export default(state,action) =>{
             return{
                 ...state,
                 horariomedi:[]
-            }        
+            } 
+
+        case OBTENER_MEDICOS:
+            return{
+                ...state,
+                medicos:action.payload
+                
+            }
+            default:
+                return state  
     }
 }

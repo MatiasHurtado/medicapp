@@ -22,7 +22,7 @@ const VerHorario = ({}) => {
       verHorarioMedico(hora.idMedico)
       agregarHora(hora)
       eliminarHora(hora.id)
-      toast.success(`su hora para ${hora.especialidad} ha sido asiganada para el ${hora.Fecha}`)
+      toast.success(`Su Hora Para:  ${hora.especialidad} ha sido asiganada para el ${hora.Fecha}`)
       setTimeout(() => {
         guardarActivo(true)
       }, 2000);
@@ -38,13 +38,13 @@ const VerHorario = ({}) => {
             ?(<li className="listado"><p>No tiene Horarios Disponibles</p></li>)
             :horariomedi.map(hora => (
                 <li className="listado">
-                <div class="box sombra">
+                <div className="box sombra">
                   <p><span>Fecha:</span> {hora.Fecha} </p>
                  
                   {activo? ( <button class="button is-primary is-small is-rounded"
                     onClick={()=>obtenerHora(hora)}
                   >Pedir Hora</button>):
-                   <button class="button is-primary is-small is-rounded"disabled
+                   <button className="button is-primary is-small is-rounded"disabled
                 
                   >Pedir Hora</button>
                   }

@@ -12,7 +12,7 @@ const VerAgenda = () => {
             ?(<li className="listado"><p>No tiene Horas Asignadas</p></li>)
             :agenda.map(hora => (
                 <li className="listado">
-                <div class="box sombra">
+                <div className="box sombra">
                   <p>Tiene Una Hora Con : <span>{hora.medico} </span> De <span>{hora.especialidad} </span>Hora Para El: <span>{hora.Fecha} </span></p>
                 </div>
               </li>

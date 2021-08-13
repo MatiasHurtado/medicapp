@@ -18,6 +18,8 @@ const VistaCliente =() => {
 //   const result = horarios.filter(horario => horario.idMedico === id);
 //   guardarHorarioMed(result)
 //   }
+
+  
   return (
 
 

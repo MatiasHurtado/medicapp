@@ -1,8 +1,9 @@
 import React,{useReducer} from 'react';
 import {
-    Obtener_Horarios,ELIMINAR_HORA,REINICIAR_HORARIOS} from '../../types/index'
+    Obtener_Horarios,ELIMINAR_HORA,REINICIAR_HORARIOS,OBTENER_MEDICOS} from '../../types/index'
 import medicoReducer from './medicoReducer';
 import medicoContext from './medicoContext';
+import clienteAxios from '../../config/axios'
 
 
 const MedicoState = props => {
@@ -32,16 +33,34 @@ const MedicoState = props => {
             {Fecha:"22/02/2019",id:33 ,idMedico:4, especialidad:"Cosmetologia",medico:"Thiare Zenteno"}
         ],
           horariomedi: [],
-         medicos:[
-            {id:1,nombre:"Marcelo Herrara", especialidad:"Ortodoncia"},
-            {id:2,nombre:"Fernando Guitierrez", especialidad:"Ginecologo"},
-            {id:3,nombre:"Luis Estrella", especialidad:"Dentista"},
-            {id:4,nombre:"Thiare Zenteno", especialidad:"Cosmetologia"},]
+         medicos:null
     }
 
 
     //Dispatch para ejecutar las acciones
     const [state, dispatch] = useReducer(medicoReducer, initialState)
+
+    const {horarios,horariomedi,medicos} = initialState
+    const obtenerMedicos=  async() =>{
+
+        try {
+
+            //Hacemos la peticion a la Api
+            const resultado = await clienteAxios.get('/api/medicos')
+            console.log(resultado.data)
+           
+           
+
+            dispatch({
+                type:OBTENER_MEDICOS,
+                payload:resultado.data.medico
+             })
+
+            
+        } catch (error) {
+            console.log(error)
+        }        
+    }
 
     //Funciones Para el Reducer
     const verHorarioMedico =(id) =>{
@@ -76,6 +95,7 @@ const MedicoState = props => {
                 medicos:state.medicos,
                 verHorarioMedico,
                 eliminarHora,
+                obtenerMedicos
 
             }}
         >

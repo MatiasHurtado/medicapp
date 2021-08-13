@@ -76,12 +76,10 @@ span{
 .med{ 
   grid-area:medicos;
   margin: 0 auto;
-
   width: 60%;
 }
 .hor{grid-area:horario;
   margin: 0 auto;
-
   width: 60%;
 }
 .agen{grid-area:agenda;
