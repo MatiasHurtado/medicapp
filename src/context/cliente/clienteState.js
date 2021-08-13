@@ -1,6 +1,6 @@
 import React,{useReducer} from 'react';
 import clienteAxios from '../../config/axios';
-import {Pedir_Hora} from '../../types/index'
+import {Pedir_Hora,OBTENER_AGENDA_CLIENTE} from '../../types/index'
 import clienteContext from './clienteContext';
 import clienteReducer from './clienteReducer';
 
@@ -31,17 +31,33 @@ const ClienteState = props => {
             // })
        } catch (error) {
            console.log(error)
-       }
-
-        
+       } 
 
     }
+
+    const obtenerAgedaCliente = async()=>{
+
+        const cliente ="61130b0552cda631f865a1d0"
+
+        try{
+            const resultado = await clienteAxios.get(`/api/agendas/${cliente}`)
+            console.log(resultado.data.agenda)
+            dispatch({
+                type:OBTENER_AGENDA_CLIENTE,
+                payload:resultado.data.agenda
+            })
+        }catch(error){
+            console.log(error)
+        } 
+    }
+
 
     return ( 
         <clienteContext.Provider
             value={{
                 agenda:state.agenda,
-                agregarHora
+                agregarHora,
+                obtenerAgedaCliente
             }}
         >
             {props.children}

@@ -31,7 +31,7 @@ const VerMedicos = () => {
          
 
 
-          {!medicos
+          {medicos.length === 0
           ?(
             <ul className="listados">
             <button className="button is-success is-medium"

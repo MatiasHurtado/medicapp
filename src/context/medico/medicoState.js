@@ -33,7 +33,7 @@ const MedicoState = props => {
             {Fecha:"22/02/2019",id:33 ,idMedico:4, especialidad:"Cosmetologia",medico:"Thiare Zenteno"}
         ],
           horariomedi: [],
-         medicos:null
+         medicos:[]
     }
 
 

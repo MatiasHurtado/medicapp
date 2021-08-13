@@ -7,3 +7,4 @@ export const ELIMINAR_HORA='ELIMINAR_HORA'
 //Types clienteState
 
 export const Pedir_Hora = 'Pedir_Hora'
+export const OBTENER_AGENDA_CLIENTE='OBTENER_AGENDA_CLIENTE'
