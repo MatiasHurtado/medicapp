@@ -7,13 +7,15 @@ const VerMedicos = () => {
 
     //Obtener state de medico
     const MedicoContext = useContext(medicoContext)
-    const {medicos,verHorarioMedico,obtenerMedicos} = MedicoContext;
+    const {medicos,verHorarioMedico,obtenerMedicos,obtenerAgendaDisponible} = MedicoContext;
 
 
 
     const ObtenerHras=(id)=>{
-      verHorarioMedico(id)
+     
+     
       
+      obtenerAgendaDisponible(id,false)
     }
     
 
@@ -44,7 +46,7 @@ const VerMedicos = () => {
                   <div className="box sombra">
                     <p><span>Nombre:</span> {medico.nombre} <span>Especialidad:</span> {medico.especialidad}</p>
                     <button className="button is-primary is-small is-rounded"
-                      onClick={()=>ObtenerHras(medico.id)}
+                      onClick={()=>ObtenerHras(medico._id)}
                     >Ver Horarios</button>
                   </div>
                 </li>

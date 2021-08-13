@@ -64,7 +64,7 @@ span{
   grid-template-areas:' medicos medicos' 
                       ' horario horario'
                       'agenda agenda';
-  grid-template-columns: 40% ;
+  grid-template-columns: auto ;
   width:90%;
   margin: 0 auto;
   height: auto;

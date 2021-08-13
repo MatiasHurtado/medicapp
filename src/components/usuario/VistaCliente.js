@@ -33,7 +33,7 @@ const VistaCliente =() => {
         <VerMedicos
         >
         </VerMedicos>
-        {horariomedi.length === 0?(null):<VerHorario
+        {horariomedi.length === 0?null:<VerHorario
         ></VerHorario>}
         
       <VerAgenda>

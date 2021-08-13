@@ -1,6 +1,6 @@
 import React,{useReducer} from 'react';
-import {
-    Pedir_Hora} from '../../types/index'
+import clienteAxios from '../../config/axios';
+import {Pedir_Hora} from '../../types/index'
 import clienteContext from './clienteContext';
 import clienteReducer from './clienteReducer';
 
@@ -19,11 +19,21 @@ const ClienteState = props => {
 
 
     //Funciones ClienteState
-    const agregarHora =hora=>{
-        dispatch({
-            type:Pedir_Hora,
-            payload:hora
-        })
+    const agregarHora = async (hora)=>{
+
+       try {
+            
+            const resultado = await clienteAxios.put(`/api/agendas/${hora._id}`,hora)
+            console.log(resultado)
+            // dispatch({
+            //     type:Pedir_Hora,
+            //     payload:hora
+            // })
+       } catch (error) {
+           console.log(error)
+       }
+
+        
 
     }
 

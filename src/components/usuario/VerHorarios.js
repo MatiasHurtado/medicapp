@@ -5,7 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const VerHorario = ({}) => {
     //Obtener state de medico
     const medicoContext = useContext(MedicoContext)
-    const {horariomedi,eliminarHora,verHorarioMedico} = medicoContext;
+    const {horariomedi,eliminarHora} = medicoContext;
 
       //Obtener state de medico
       const clienteContext = useContext(ClienteContext)
@@ -19,9 +19,12 @@ const VerHorario = ({}) => {
       
     const obtenerHora =hora=>{
       guardarActivo(false)
-      verHorarioMedico(hora.idMedico)
-      agregarHora(hora)
+      
       eliminarHora(hora.id)
+
+      hora.estado = true
+      hora.cliente ="61130b0552cda631f865a1d0"
+      agregarHora(hora)
       toast.success(`Su Hora Para:  ${hora.especialidad} ha sido asiganada para el ${hora.Fecha}`)
       setTimeout(() => {
         guardarActivo(true)
@@ -39,7 +42,7 @@ const VerHorario = ({}) => {
             :horariomedi.map(hora => (
                 <li className="listado">
                 <div className="box sombra">
-                  <p><span>Fecha:</span> {hora.Fecha} </p>
+                  <p><span>Hora: </span>{hora.fecha}</p>
                  
                   {activo? ( <button class="button is-primary is-small is-rounded"
                     onClick={()=>obtenerHora(hora)}

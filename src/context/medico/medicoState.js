@@ -1,6 +1,6 @@
 import React,{useReducer} from 'react';
 import {
-    Obtener_Horarios,ELIMINAR_HORA,REINICIAR_HORARIOS,OBTENER_MEDICOS} from '../../types/index'
+    ELIMINAR_HORA,REINICIAR_HORARIOS,OBTENER_MEDICOS,OBTENER_AGENDAS_LIBRES} from '../../types/index'
 import medicoReducer from './medicoReducer';
 import medicoContext from './medicoContext';
 import clienteAxios from '../../config/axios'
@@ -40,36 +40,40 @@ const MedicoState = props => {
     //Dispatch para ejecutar las acciones
     const [state, dispatch] = useReducer(medicoReducer, initialState)
 
-    const {horarios,horariomedi,medicos} = initialState
     const obtenerMedicos=  async() =>{
 
         try {
-
             //Hacemos la peticion a la Api
-            const resultado = await clienteAxios.get('/api/medicos')
-            console.log(resultado.data)
-           
-           
+            const resultado = await clienteAxios.get('/api/medicos/')
 
             dispatch({
                 type:OBTENER_MEDICOS,
                 payload:resultado.data.medico
              })
-
-            
         } catch (error) {
             console.log(error)
         }        
     }
-
-    //Funciones Para el Reducer
-    const verHorarioMedico =(id) =>{
-        dispatch({
-            type:Obtener_Horarios,
-            payload:id
-        })
     
+    const obtenerAgendaDisponible= async(medicoId,estado)=>{
+
+        try {
+            console.log(medicoId,estado)
+            const resultado= await clienteAxios.get(`/api/agendas/${medicoId}/${estado}`)
+            console.log(resultado.data.agendas)
+            dispatch({
+                type:OBTENER_AGENDAS_LIBRES,
+                payload:resultado.data.agendas
+            })
+            
+        } catch (error) {
+            console.log(error)
+        }
     }
+
+
+
+  
     const eliminarHora =(id) =>{
         dispatch({
             type:ELIMINAR_HORA,
@@ -93,9 +97,10 @@ const MedicoState = props => {
                 horarios:state.horarios,
                 horariomedi:state.horariomedi,
                 medicos:state.medicos,
-                verHorarioMedico,
+               
                 eliminarHora,
-                obtenerMedicos
+                obtenerMedicos,
+                obtenerAgendaDisponible
 
             }}
         >

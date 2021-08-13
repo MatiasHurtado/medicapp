@@ -1,13 +1,14 @@
 import {
-    Obtener_Horarios,ELIMINAR_HORA,REINICIAR_HORARIOS,OBTENER_MEDICOS} from '../../types/index'
+    ELIMINAR_HORA,REINICIAR_HORARIOS,OBTENER_MEDICOS,OBTENER_AGENDAS_LIBRES} from '../../types/index'
 
 export default(state,action) =>{
     switch(action.type){
-        case Obtener_Horarios:
+        case OBTENER_AGENDAS_LIBRES:
+        
             return{
 
                 ...state,
-                horariomedi: state.horarios.filter(horariomedi => horariomedi.idMedico === action.payload)
+                horariomedi: action.payload
             }
         case ELIMINAR_HORA:
             return{
@@ -26,6 +27,8 @@ export default(state,action) =>{
                 medicos:action.payload
                 
             }
+       
+          
             default:
                 return state  
     }
