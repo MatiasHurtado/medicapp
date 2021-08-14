@@ -44,7 +44,11 @@ const VerMedicos = () => {
              {medicos.map(medico => (
                   <li className="listado ">
                   <div className="box sombra">
-                    <p><span>Nombre:</span> {medico.nombre} <span>Especialidad:</span> {medico.especialidad}</p>
+                  <div>
+                  <label><span>Nombre:</span> {medico.nombre}</label>
+                  <label><span>Especialidad:</span> {medico.especialidad}</label>
+                  </div>
+                    
                     <button className="button is-primary is-small is-rounded"
                       onClick={()=>ObtenerHras(medico._id)}
                     >Ver Horarios</button>

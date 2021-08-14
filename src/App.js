@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Switch,Route} from 'react-router-dom';
-import Clien from './components/usuario/clien';
+import Login from './components/auth/Login';
 import VistaCliente from './components/usuario/VistaCliente';
 import ClienteState from './context/cliente/clienteState';
 import MedicoState from './context/medico/medicoState';
@@ -12,8 +12,8 @@ function App() {
       <ClienteState>
         <Router>
         <Switch>
-          <Route exact path="/" component={VistaCliente}/>
-          <Route exact path="/a" component={Clien}/>
+          <Route exact path="/Agenda" component={VistaCliente}/>
+          <Route exact path="/" component={Login}/>
         </Switch>
       </Router>
       </ClienteState>

@@ -42,7 +42,10 @@ const VerHorario = ({}) => {
             :horariomedi.map(hora => (
                 <li className="listado">
                 <div className="box sombra">
+                <div>
                   <p><span>Hora: </span>{hora.fecha}</p>
+                </div>
+                 
                  
                   {activo? ( <button class="button is-primary is-small is-rounded"
                     onClick={()=>obtenerHora(hora)}

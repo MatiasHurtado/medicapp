@@ -8,6 +8,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.field{
+  display: flex;
+  padding-bottom: 1em;
+}
+.field > label{
+  width: 7em;
+}
 h3{
   padding-bottom: 1em !important;
 }
@@ -26,7 +33,19 @@ span{
 .Contenerdor{
   width: 100%;
   height: 2000px;
-  background-image: linear-gradient(180deg, #505467 0, #1f3259 50%, #00154b 100%);
+  background: rgb(43,25,91);
+  background: -moz-linear-gradient(left,  rgb(43,25,91) 0%, rgb(43,25,91) 100%);
+  background: -webkit-linear-gradient(left,  rgb(43,25,91) 0%,rgb(43,25,91) 100%);
+  background: linear-gradient(to right,  rgb(43,25,91) 0%,rgb(43,25,91) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b195b', endColorstr='#2b195b',GradientType=1 );
+  
+  
+  
+  
+  
+  
+  
+
 }
 .cabecera{
  
@@ -41,7 +60,11 @@ span{
 
 
 .titulo{
-  background-image: linear-gradient(345deg, #00ffff 0, #21e0ff 25%, #3cb5f2 50%, #408cbb 75%, #3b6788 100%);
+  background: rgb(135,224,253);
+  background: -moz-linear-gradient(45deg,  rgb(135,224,253) 0%, rgb(83,203,241) 40%, rgb(5,171,224) 100%);
+  background: -webkit-linear-gradient(45deg,  rgb(135,224,253) 0%,rgb(83,203,241) 40%,rgb(5,171,224) 100%);
+  background: linear-gradient(45deg,  rgb(135,224,253) 0%,rgb(83,203,241) 40%,rgb(5,171,224) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=1 );
   font-size: 1.5rem;
   font-weight: 900;
   display: flex;
@@ -61,35 +84,45 @@ span{
 .productos{
   display: grid;
   
-  grid-template-areas:' medicos medicos' 
-                      ' horario horario'
+  grid-template-areas:' medicos horario' 
                       'agenda agenda';
-  grid-template-columns: auto ;
-  width:90%;
-  margin: 0 auto;
+  grid-template-columns: 40% 40% ;
+  width:100%;
+ 
   height: auto;
   
   color: aliceblue;
   padding-bottom:20px;
   justify-content: space-around;
 }
+
+
+
 .med{ 
   grid-area:medicos;
   margin: 0 auto;
-  width: 60%;
+  width: 100%;
 }
 .hor{grid-area:horario;
   margin: 0 auto;
-  width: 60%;
+  width: 100%;
 }
 .agen{grid-area:agenda;
   margin: 0 auto;
-  width: 60%;
+  width: 50%;
 }
 .producto{
   margin-top: 20px;
-  background-image: linear-gradient(345deg, #00ffff 0, #21e0ff 25%, #3cb5f2 50%, #408cbb 75%, #3b6788 100%);  
-  border-radius: 6%;
+  background: rgb(135,224,253);
+  background: -moz-linear-gradient(45deg,  rgb(135,224,253) 0%, rgb(83,203,241) 40%, rgb(5,171,224) 100%);
+  background: -webkit-linear-gradient(45deg,  rgb(135,224,253) 0%,rgb(83,203,241) 40%,rgb(5,171,224) 100%);
+  background: linear-gradient(45deg,  rgb(135,224,253) 0%,rgb(83,203,241) 40%,rgb(5,171,224) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=1 );
+  
+
+  color:#ffffff;
+    border-radius: 5%;
+    
 }
 .listados{
   margin-bottom: 3em;
@@ -98,19 +131,76 @@ span{
 .box{
   background-image: radial-gradient(circle at 67.85% 50%, #eae6ee 0, #dfd8e9 50%, #d3cbe4 100%);
   margin: 0 auto;
-  width: 80%;
+  width: 60%;
   height: auto;
   align-content:center ;
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex !important;
   flex-direction: row;
+  flex-wrap: nowrap;
   margin-bottom: 1rem;
+  
+  
+  
+}
+.box div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+.box button{
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 1em;
 }
 .producto h3{
   
   margin-bottom: 1em;
   margin-top: 1em;
 }
+
+@media (max-width: 900px) {
+  .productos{
+    display: grid;
+    grid-template-areas:' medicos ' 
+                        ' horario '
+                        'agenda ';
+    grid-template-columns: 80% ;
+    width:100%;
+   
+    height: auto;
+    
+    color: aliceblue;
+    padding-bottom:20px;
+    justify-content: space-around;
+  }
+  .box{
+    background-image: radial-gradient(circle at 67.85% 50%, #eae6ee 0, #dfd8e9 50%, #d3cbe4 100%);
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+    align-content:center ;
+    justify-content: space-around;
+    display: flex !important;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    
+    
+    
+  }
+  .box button{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 1em;
+  }
+  .agen{grid-area:agenda;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 100%;
+  }
+}
+
 
 
 

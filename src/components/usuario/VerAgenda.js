@@ -24,7 +24,12 @@ const VerAgenda = () => {
             :agenda.map(hora => (
                 <li className="listado">
                 <div className="box sombra">
-                  <p>Tiene Una Hora Con : <span>{hora.medico.nombre} </span> De <span>{hora.medico.especialidad} </span>Hora Para El: <span>{hora.fecha} </span></p>
+                  <div>
+                    <label><span>Tiene Una Cita con: </span>{hora.medico.nombre}</label>
+                    <label><span>Especialidad:</span> {hora.medico.especialidad} </label>
+                    <label><span>Para el: </span> {hora.fecha}</label>
+                  </div>
+                  
                 </div>
               </li>
               ))
