@@ -1,17 +1,18 @@
 import React,{useContext} from 'react';
 import ClienteContext from '../../context/cliente/clienteContext';
+import AuthContext from '../../context/autenticacion/authContext';
 const VerAgenda = () => {
 
     const clienteContext = useContext(ClienteContext)
     const {agenda,obtenerAgedaCliente} =clienteContext
 
+    const authContext= useContext(AuthContext)
+    const {cliente}= authContext
 
 
 
-    const ObtenerAgenda = () =>{
 
-    }
-
+  
     return ( 
         <div className="producto agen">
             <h3>Mi Agenda</h3>     
@@ -19,7 +20,7 @@ const VerAgenda = () => {
             {agenda.length===0
             ?
               <button className="button is-success is-medium"
-              onClick={()=>obtenerAgedaCliente()}>Ver mi agenda </button>
+              onClick={()=>obtenerAgedaCliente(cliente)}>Ver mi agenda </button>
            
             :agenda.map(hora => (
                 <li className="listado">

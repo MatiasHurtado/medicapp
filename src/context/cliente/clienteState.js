@@ -35,12 +35,12 @@ const ClienteState = props => {
 
     }
 
-    const obtenerAgedaCliente = async()=>{
+    const obtenerAgedaCliente = async(cliente)=>{
 
-        const cliente ="61130b0552cda631f865a1d0"
+       console.log(cliente) 
 
         try{
-            const resultado = await clienteAxios.get(`/api/agendas/${cliente}`)
+            const resultado = await clienteAxios.get(`/api/agendas/${cliente._id}`)
             console.log(resultado.data.agenda)
             dispatch({
                 type:OBTENER_AGENDA_CLIENTE,

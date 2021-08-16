@@ -1,15 +1,20 @@
 import React,{Fragment,useContext,useState} from 'react';
 import MedicoContext from '../../context/medico/medicoContext';
 import ClienteContext from '../../context/cliente/clienteContext';
+import AuthContext from '../../context/autenticacion/authContext';
 import toast, { Toaster } from 'react-hot-toast';
 const VerHorario = ({}) => {
     //Obtener state de medico
     const medicoContext = useContext(MedicoContext)
     const {horariomedi,eliminarHora} = medicoContext;
 
+    //Obtener state auth
+    const authContext = useContext(AuthContext)
+    const {cliente}= authContext
+
       //Obtener state de medico
       const clienteContext = useContext(ClienteContext)
-      const {agregarHora} = clienteContext;
+      const {agregarHora,obtenerAgedaCliente} = clienteContext;
     
 
       const [activo,guardarActivo]= useState(true)
@@ -23,10 +28,12 @@ const VerHorario = ({}) => {
       eliminarHora(hora.id)
 
       hora.estado = true
-      hora.cliente ="61130b0552cda631f865a1d0"
+      hora.cliente =cliente._id
       agregarHora(hora)
-      toast.success(`Su Hora Para:  ${hora.especialidad} ha sido asiganada para el ${hora.Fecha}`)
+      
+      toast.success(`Su Hora Para:  ${hora.medico.especialidad} ha sido asiganada para el ${hora.fecha}`)
       setTimeout(() => {
+        obtenerAgedaCliente(cliente)
         guardarActivo(true)
       }, 2000);
      

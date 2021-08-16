@@ -1,5 +1,7 @@
-import React from 'react';
+import React,{useState,useContext,useEffect} from 'react';
 import styled from '@emotion/styled'
+import AuthContext from '../../context/autenticacion/authContext';
+
 
 const ContenedorLogin = styled.div`
 background-image: radial-gradient(circle at 62.28% 119.64%, #434863 0, #1f3159 50%, #001d4f 100%);
@@ -38,32 +40,83 @@ const LoginForm = styled.div`
 `;
 
 
-const Login = () => {
+const Login = (props) => {
+
+    const authContext = useContext(AuthContext)
+    const {autenticado,iniciarSesion} = authContext;
+
+
+    useEffect(() => {
+        if(autenticado){
+            props.history.push('/Agenda');
+        }
+     
+    }, [autenticado,props.history])
+
+        //State cliente
+const [cliente, guardarCliente]= useState({
+    correo:'', 
+    password:'', 
+
+
+});
+//Extraer Cliente 
+const{correo,password} = cliente;
+
+
+const onChange = (e) => {
+    guardarCliente({
+        ...cliente,
+        [e.target.name] : e.target.value
+    })
+
+}
+
+const onSubmit = e =>{
+    e.preventDefault();
+    iniciarSesion({correo,password})
+
+}
     return (
        <ContenedorLogin>
             <LoginDiv>
                 <Loginh1>Iniciar Sesion</Loginh1>  
                 <LoginForm>
-                
+                <form
+                        onSubmit={onSubmit}
+                    >
+                        <div className="field">
+                            <label className="label">Correo</label>
+                            <input className="input is-rounded " 
+                                type="correo"
+                                id="correo"
+                                name="correo"
+                                placeholder="Tu correo"
+                                value={correo}
+                                onChange={onChange}
+                                />
+                        </div>
 
-                    <div class="field">
-                        <label class="label">Correo</label>
-                        <input class="input is-rounded " type="email" placeholder="Ingrese Su email" value=""/>
-                    </div>
-
-                    <div class="field">
-                   
-                        <label class="label">Password</label>
-                        <input class="input  is-rounded" type="password" placeholder="Ingrese Su password" value=""/>
-                     
-                    </div>
-
-                 
-                    <div class="field">
-                        <button class="button is-link is-medium is-rounded">Iniciar Sesion</button>
-                    </div>
-                
+                        <div class="field">
                     
+                            <label className="label">Password</label>
+                            <input className="input  is-rounded" 
+                               type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Ingresa Tu password"
+                                value={password}
+                                onChange={onChange}
+
+                                />
+                        
+                        </div>
+                    
+
+                        <div class="field">
+                            <button class="button is-link is-medium is-rounded">Login</button>
+                        </div>
+                    </form>
                     </LoginForm>  
             </LoginDiv>
        </ContenedorLogin>

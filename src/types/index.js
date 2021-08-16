@@ -8,3 +8,11 @@ export const ELIMINAR_HORA='ELIMINAR_HORA'
 
 export const Pedir_Hora = 'Pedir_Hora'
 export const OBTENER_AGENDA_CLIENTE='OBTENER_AGENDA_CLIENTE'
+
+
+//Types Autenticacion
+
+export const REGISTRO_EXITOSO ='REGISTRO_EXITOSO';
+export const OBTENER_USUARIO ='OBTENER_USUARIO';
+export const LOGIN_EXITOSO = 'LOGIN_EXITOSO';
+export const CERRAR_SESION ='CERRAR_SESION'

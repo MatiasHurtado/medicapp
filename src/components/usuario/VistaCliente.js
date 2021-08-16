@@ -1,9 +1,10 @@
-import React,{useState,useContext} from 'react';
+import React,{useState,useContext, useEffect} from 'react';
 
 import VerHorario from './VerHorarios';
 import VerMedicos from './VerMedicos';
 import VerAgenda from './VerAgenda';
 import MedicoContext from '../../context/medico/medicoContext';
+import AuthContext from '../../context/autenticacion/authContext';
 
 
 
@@ -13,7 +14,16 @@ const VistaCliente =() => {
   const medicoContext = useContext(MedicoContext)
   const {horariomedi} = medicoContext;
 
- 
+
+  //Extraer la informacion de autenticacion
+  const authContext = useContext(AuthContext);
+  const {cliente,usuarioAutenticado,cerrarSesion}= authContext;
+
+
+  useEffect(()=>{
+
+    usuarioAutenticado();
+  },[] ) 
 //  const verhorario =(id) =>{
 //   const result = horarios.filter(horario => horario.idMedico === id);
 //   guardarHorarioMed(result)
@@ -26,7 +36,12 @@ const VistaCliente =() => {
     <div className="Contenerdor sombra">
       <div className="cabecera">
         <div className="titulo sombra">
-          <h1>Hola Cliente</h1>
+          {cliente?<h1>Hola {cliente.nombre} </h1>:null } 
+
+          <button class="button is-danger is-small is-rounded"
+            onClick={()=>cerrarSesion()}
+          >CERRAR SESION</button>
+
         </div>
       </div>
       <div className="productos">
