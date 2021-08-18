@@ -2,73 +2,91 @@ body {
   background-color: antiquewhite;
   margin: 0;
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.field{
+.field {
   display: flex;
   padding-bottom: 1em;
 }
-.field > label{
+.field > label {
   width: 7em;
 }
-h3{
+h3 {
   padding-bottom: 1em !important;
 }
-.sombra{
-  box-shadow: 0 0.1rem 0.15rem rgba(40,36,89,0.15),0 0.25rem 0.5rem rgba(40,36,89,0.15),0 0.75rem 1.75rem rgba(40,36,89,0.2);
+.sombra {
+  box-shadow: 0 0.1rem 0.15rem rgba(40, 36, 89, 0.15),
+    0 0.25rem 0.5rem rgba(40, 36, 89, 0.15),
+    0 0.75rem 1.75rem rgba(40, 36, 89, 0.2);
 }
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-span{
+span {
   color: blue;
   font-weight: bold;
 }
 
-.Contenerdor{
+.Contenerdor {
   width: 100%;
   height: 2000px;
-  background: rgb(43,25,91);
-  background: -moz-linear-gradient(left,  rgb(43,25,91) 0%, rgb(43,25,91) 100%);
-  background: -webkit-linear-gradient(left,  rgb(43,25,91) 0%,rgb(43,25,91) 100%);
-  background: linear-gradient(to right,  rgb(43,25,91) 0%,rgb(43,25,91) 100%);
+  background: rgb(43, 25, 91);
+  background: -moz-linear-gradient(
+    left,
+    rgb(43, 25, 91) 0%,
+    rgb(43, 25, 91) 100%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgb(43, 25, 91) 0%,
+    rgb(43, 25, 91) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgb(43, 25, 91) 0%,
+    rgb(43, 25, 91) 100%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b195b', endColorstr='#2b195b',GradientType=1 );
-  
-  
-  
-  
-  
-  
-  
-
 }
-.cabecera{
- 
+.cabecera {
   height: 5em;
   margin: 0 auto;
   margin-bottom: 20px;
   width: 100%;
   border-radius: 5px 5px 5px 5px;
-
 }
 
-
-
-.titulo{
-  background: rgb(135,224,253);
-  background: -moz-linear-gradient(45deg,  rgb(135,224,253) 0%, rgb(83,203,241) 40%, rgb(5,171,224) 100%);
-  background: -webkit-linear-gradient(45deg,  rgb(135,224,253) 0%,rgb(83,203,241) 40%,rgb(5,171,224) 100%);
-  background: linear-gradient(45deg,  rgb(135,224,253) 0%,rgb(83,203,241) 40%,rgb(5,171,224) 100%);
+.titulo {
+  background: rgb(135, 224, 253);
+  background: -moz-linear-gradient(
+    45deg,
+    rgb(135, 224, 253) 0%,
+    rgb(83, 203, 241) 40%,
+    rgb(5, 171, 224) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(135, 224, 253) 0%,
+    rgb(83, 203, 241) 40%,
+    rgb(5, 171, 224) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgb(135, 224, 253) 0%,
+    rgb(83, 203, 241) 40%,
+    rgb(5, 171, 224) 100%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=1 );
   font-size: 1.5rem;
   font-weight: 900;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   align-self: center;
   width: 100%;
@@ -78,130 +96,107 @@ span{
   letter-spacing: 0.1em;
   border-end-end-radius: 40%;
   border-end-start-radius: 40%;
- 
 }
 
-.productos{
+.titulo button {
+  align-content: flex-end;
+}
+
+.productos {
   display: grid;
-  
-  grid-template-areas:' medicos horario' 
-                      'agenda agenda';
-  grid-template-columns: 40% 40% ;
-  width:100%;
- 
+
+  grid-template-areas:
+    " medicos horario"
+    "agenda agenda";
+  grid-template-columns: 40% 40%;
+  width: 100%;
+
   height: auto;
-  
+
   color: aliceblue;
-  padding-bottom:20px;
+  padding-bottom: 20px;
   justify-content: space-around;
 }
 
-
-
-.med{ 
-  grid-area:medicos;
+.med {
+  grid-area: medicos;
   margin: 0 auto;
   width: 100%;
 }
-.hor{grid-area:horario;
+.hor {
+  grid-area: horario;
   margin: 0 auto;
   width: 100%;
 }
-.agen{grid-area:agenda;
+.agen {
+  grid-area: agenda;
   margin: 0 auto;
-  width: 50%;
+  width: 70%;
 }
-.producto{
+.producto {
   margin-top: 20px;
-  background: rgb(135,224,253);
-  background: -moz-linear-gradient(45deg,  rgb(135,224,253) 0%, rgb(83,203,241) 40%, rgb(5,171,224) 100%);
-  background: -webkit-linear-gradient(45deg,  rgb(135,224,253) 0%,rgb(83,203,241) 40%,rgb(5,171,224) 100%);
-  background: linear-gradient(45deg,  rgb(135,224,253) 0%,rgb(83,203,241) 40%,rgb(5,171,224) 100%);
+  background: rgb(135, 224, 253);
+  background: -moz-linear-gradient(
+    45deg,
+    rgb(135, 224, 253) 0%,
+    rgb(83, 203, 241) 40%,
+    rgb(5, 171, 224) 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    rgb(135, 224, 253) 0%,
+    rgb(83, 203, 241) 40%,
+    rgb(5, 171, 224) 100%
+  );
+  background: linear-gradient(
+    45deg,
+    rgb(135, 224, 253) 0%,
+    rgb(83, 203, 241) 40%,
+    rgb(5, 171, 224) 100%
+  );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=1 );
-  
 
-  color:#ffffff;
-    border-radius: 5%;
-    
+  color: #ffffff;
+  border-radius: 5%;
 }
-.listados{
+
+.listados {
   margin-bottom: 3em;
+  
+}
+.listados table {
+  margin: 0 auto;
+  border-radius: 6%;
+  line-height: 2;
+  text-align: left;
+  box-shadow: 1px 2px 4px  #2e2b2b  ;
+  width: 70%;
+  
 }
 
-.box{
-  background-image: radial-gradient(circle at 67.85% 50%, #eae6ee 0, #dfd8e9 50%, #d3cbe4 100%);
-  margin: 0 auto;
-  width: 60%;
-  height: auto;
-  align-content:center ;
-  justify-content: space-around;
-  display: flex !important;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin-bottom: 1rem;
-  
-  
-  
-}
-.box div{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-.box button{
-  width: 30%;
-  margin: 0 auto;
-  margin-top: 1em;
-}
-.producto h3{
-  
-  margin-bottom: 1em;
-  margin-top: 1em;
-}
+
 
 @media (max-width: 900px) {
-  .productos{
+  .productos {
     display: grid;
-    grid-template-areas:' medicos ' 
-                        ' horario '
-                        'agenda ';
-    grid-template-columns: 80% ;
-    width:100%;
-   
+    grid-template-areas:
+      " medicos "
+      " horario "
+      "agenda ";
+    grid-template-columns: 80%;
+    width: 100%;
+
     height: auto;
-    
+
     color: aliceblue;
-    padding-bottom:20px;
+    padding-bottom: 20px;
     justify-content: space-around;
   }
-  .box{
-    background-image: radial-gradient(circle at 67.85% 50%, #eae6ee 0, #dfd8e9 50%, #d3cbe4 100%);
-    margin: 0 auto;
-    width: 80%;
-    height: auto;
-    align-content:center ;
-    justify-content: space-around;
-    display: flex !important;
-    flex-direction: row;
-    margin-bottom: 1rem;
-    
-    
-    
-  }
-  .box button{
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 1em;
-  }
-  .agen{grid-area:agenda;
+
+  .agen {
+    grid-area: agenda;
     margin: 0 auto;
     margin-top: 1em;
     width: 100%;
   }
 }
-
-
-
-
-
